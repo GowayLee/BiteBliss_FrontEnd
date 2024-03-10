@@ -6,6 +6,7 @@ import { onMounted } from 'vue'
 <template>
   <div>
     This is HomeView
+    <svg src="src\assets\icon\logo.svg"></svg>
   </div>
 </template>
 
