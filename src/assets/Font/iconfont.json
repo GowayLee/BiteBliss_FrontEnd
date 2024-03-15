@@ -1,0 +1,16 @@
+{
+  "id": "4468485",
+  "name": "BiteBlissLogo",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "39567713",
+      "name": "logolunkuo",
+      "font_class": "logolunkuo",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

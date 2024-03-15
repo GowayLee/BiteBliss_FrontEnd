@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 
 // =======================常量=======================
 const B1List = ['Sapid', 'Poke Bowl Rice', 'Zone U Bakery']

@@ -22,7 +22,7 @@ function handleChange(active: number) {
 
 <template>
   <RouterView />
-  <var-bottom-navigation v-model:active="active" @change="handleChange(active)" active-color="#2C7CB2" :fixed=true :border=true>
+  <var-bottom-navigation v-model:active="active" @change="handleChange(active)" active-color="#2C7CB2" :fixed=true :border=true style="height: 7vh">
     <var-bottom-navigation-item label="Home" icon="home" />
     <var-bottom-navigation-item label="Ballot-抽签" icon="thumb-down" />
     <var-bottom-navigation-item label="Come Soon" icon="plus" />
