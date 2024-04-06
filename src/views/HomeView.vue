@@ -89,15 +89,29 @@ function textChangeAnimation(): void {
 
 <template>
   <div class="mainLogo">
-    <span class="iconfont">&#xe602;</span>
+    <span id="BBicon">&#xe602;</span>
   </div>
 
   <div id="container">
     <span id="text1"></span>
     <span id="text2"></span>
   </div>
+  <var-divider style="margin-top: 17vh;"></var-divider>
+  <div style="display: grid; justify-content: center; padding: 20px; font-size: 20px;">
+    <p class="en">💡This is a mini app which concentrate on information of canteen</p>
+    <p class="zh">这是一个专注研究干饭的小程序</p>
+    <p class="en">🎊It provides creative little features. For example, drawing lots to decide today's meal!</p>
+    <p class="zh">它包含一些有趣(有趣 != 有用)的小功能，比如可以抽签决定这顿吃啥！</p>
+    <p class="en">📜Later on, XMUMers can browse everything about eating at XMUM! (Still under development...)</p>
+    <p class="zh">未来，XMUMers可以在这里找到关于XMUM干饭的一切！（刚新建文件夹）</p>
+    <var-divider/>
+    <p style="font-family: 'Lexend', cursive;">
+      <span style="font-size: 16px; color: grey;">DevTeam:</span>
+      <span style="font-size: 20px; font-weight: bold;"> Dr. Malo</span>
+      <span style="font-size: 26px;">🐵</span>
+    </p>
+  </div>
 
-  <div class="fillup"></div>
 
   <svg id="filter" style="display: none;">
     <defs>
@@ -118,12 +132,13 @@ function textChangeAnimation(): void {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=ZCOOL+XiaoWei&display=swap');
 #container {
   position: absolute;
   margin: auto;
   width: 100vw;
   height: 80px;
-  top: 45vh;
+  top: 25vh;
   filter: url(#threshold) blur(0.5px);
 }
 
@@ -132,8 +147,8 @@ function textChangeAnimation(): void {
   width: 100%;
   display: inline-block;
   font-family: 'Raleway', sans-serif;
-  font-size: 55px;
-  color: rgb(252, 252, 252);
+  font-size: 45px;
+  color: rgb(0, 0, 0);
   text-align: center;
   user-select: none;
   -webkit-font-smoothing: antialiased;
@@ -143,38 +158,44 @@ function textChangeAnimation(): void {
 .mainLogo {
   display: flex;
   justify-content: center;
-  height: 60vh;
-  background-color: #000000;
+  margin-top: 10vh;
 }
 
 .iconfont {
   position: relative;
-  top: 25vh;
   font-family: "iconfont" !important;
   font-size: 5em;
   font-style: normal;
-  color: #ffffff;
-  text-shadow: 0 0 50px #10d431,
-                0 0 100px #10d431,
-                0 0 150px #10d431,
-                0 0 200px #10d431,
-                0 0 250px #10d431;
-  animation: animate 3s linear infinite;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+}
+#BBicon {
+  position: relative;
+  font-family: "iconfont" !important;
+  font-size: 5em;
+  font-style: normal;
+  animation: changeColor 8s linear infinite; /* 应用循环变换颜色的动画 */
 }
 
-@keyframes animate {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
+@keyframes changeColor {
+  0% { color: rgb(39, 39, 39); }
+  25% { color: rgb(50, 117, 76); }
+  50% { color: rgb(24, 103, 150); }
+  75% { color: rgb(161, 104, 153); }
+  100% { color: rgb(48, 46, 38); }
 }
 
-.fillup {
-  height: 33vh;
-  background-image: linear-gradient(to bottom, #000000, #868686);
+.en {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-family: "Lexend", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zh {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-family: "ZCOOL XiaoWei", sans-serif;
 }
 </style>

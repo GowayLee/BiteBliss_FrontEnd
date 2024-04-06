@@ -13,6 +13,11 @@ const router = createRouter({
       name: 'ballot',
       component: () => import('@/views/BallotView.vue')
     },
+    {
+      path: '/shops',
+      name: 'shops',
+      component: () => import('@/views/ShopView.vue')
+    },
   ]
 })
 

@@ -14,7 +14,7 @@ function handleChange(active: number) {
       router.push('/ballot')
       break
     case 2:
-      router.push('/coming-soon')
+      router.push('/shops')
       break
   }
 }
