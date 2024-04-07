@@ -22,13 +22,15 @@ function handleChange(active: number) {
 
 <template>
   <RouterView />
-  <var-bottom-navigation v-model:active="active" @change="handleChange(active)" active-color="#2C7CB2" :fixed=true :border=true style="height: 7vh">
+  <div style="height: 6vh; margin: 0px;"></div>
+  <var-bottom-navigation v-model:active="active" @change="handleChange(active)" active-color="#2C7CB2" :fixed=true :border=true style="height: 6vh;">
     <var-bottom-navigation-item label="Home" icon="home" />
     <var-bottom-navigation-item label="Ballot-抽签" icon="thumb-down" />
     <var-bottom-navigation-item label="Come Soon" icon="plus" />
   </var-bottom-navigation>
 </template>
 
-<style scoped>
-
+<style>
+@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=ZCOOL+XiaoWei&display=swap');
 </style>

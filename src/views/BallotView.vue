@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, type Ref } from 'vue'
+import { Snackbar } from '@varlet/ui'
 
 // =======================常量=======================
 const B1List = ['Sapid', 'Poke Bowl Rice', 'Zone U Bakery']
@@ -63,6 +64,7 @@ const selectedList = ref([
   "Bean's Express",
   'Zhong Min Kitchen 中闽美食'
 ])
+const showHowToUse: Ref<boolean> = ref(false)
 
 const collapseCtrl = ref([])
 const playBtnTxt = ref('Ready!')
@@ -162,6 +164,14 @@ function clickPlayBtn() {
     drawWordRing()
   }
 }
+
+function createSnackbar() {
+  const customSnackbar = Snackbar({
+    type: 'success',
+    content: "Wheel cleared!"
+  })
+  selectedList.value = []
+}
 </script>
 
 <template>
@@ -180,18 +190,32 @@ function clickPlayBtn() {
       </var-col>
     </var-row>
   </div>
-  <div class="buttonContainer">
-    <var-button
-      block
-      style="margin-top: 10px; margin-bottom: 10px; width: 80vw; justify-self: center"
-      elevation="5"
-      :color="rotating ? '#cf3030' : '#209B87'"
-      text-color="#fff"
-      @click="clickPlayBtn"
-      >{{ playBtnTxt }}</var-button
-    >
-  </div>
+
+  <var-row justify="center" style="margin: 2vh">
+    <var-col :span="20">
+      <var-button
+        block
+        style="width: 80vw; font-family: 'Lexend', cursive;"
+        elevation="5"
+        :color="rotating ? '#cf3030' : '#209B87'"
+        text-color="#fff"
+        @click="clickPlayBtn"
+        >{{ playBtnTxt }}</var-button
+      >
+    </var-col>
+  </var-row>
+  <var-row justify="center" gutter="5vw">
+    <var-col :span="9" justify="center">
+      <var-button type="info" style="width: 35vw; font-family: 'Lexend', cursive;" @click="showHowToUse = true">How to use</var-button>
+    </var-col>
+    <var-col :span="9" justify="center">
+      <var-button type="warning" style="width: 35vw; font-family: 'Lexend', cursive;" @click="createSnackbar()">Clear all</var-button>
+    </var-col>
+  </var-row>
+
+
   <var-divider />
+  <h2 style="font-size: 20px; font-family: 'Lexend', cursive; margin-bottom: 5px;"> 💖 Choose ur beloved ones here</h2>
   <var-collapse v-model="collapseCtrl" style="margin-bottom: 80px">
     <var-collapse-item title="D6" name="0">
       <var-checkbox-group ref="group" v-model="selectedList">
@@ -222,9 +246,37 @@ function clickPlayBtn() {
       </var-checkbox-group>
     </var-collapse-item>
   </var-collapse>
+
+  <var-popup v-model:show="showHowToUse" :overlay-style="{backgroundColor: 'rgba(0, 60, 80, 0.4)'}">
+    <div class="popup">
+      <h2>How to use</h2>
+      <p class="en">⚙️ First, choose the candidate resturants in the wheel</p>
+      <p class="zh">第一步，选择转盘中的候选餐厅</p>
+      <p class="en">⚙️ Second, click the button below to start the wheel</p>
+      <p class="zh">第二步，点击开始按钮开始旋转</p>
+      <p class="en">⚙️ Lastly, click the button below again to stop the wheel</p>
+      <p class="zh">最后，再次点击按钮停止旋转，看看抽到了哪家吧！</p>
+    </div>
+  </var-popup>
 </template>
 
 <style scoped>
+.popup {
+  max-width: 80vw;
+  padding: 24px;
+}
+.en {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-family: "Lexend", cursive;
+}
+
+.zh {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-family: "ZCOOL XiaoWei", sans-serif;
+}
+
 .ringContainer {
   margin: 0;
   padding: 0;

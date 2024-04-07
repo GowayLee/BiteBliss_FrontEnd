@@ -96,20 +96,21 @@ function textChangeAnimation(): void {
     <span id="text1"></span>
     <span id="text2"></span>
   </div>
-  <var-divider style="margin-top: 17vh;"></var-divider>
+  <var-divider style="margin-top: 15vh;"></var-divider>
   <div style="display: grid; justify-content: center; padding: 20px; font-size: 20px;">
-    <p class="en">💡This is a mini app which concentrate on information of canteen</p>
+    <p class="en">💡This is a mini app which focuses on information of canteens</p>
     <p class="zh">这是一个专注研究干饭的小程序</p>
     <p class="en">🎊It provides creative little features. For example, drawing lots to decide today's meal!</p>
     <p class="zh">它包含一些有趣(有趣 != 有用)的小功能，比如可以抽签决定这顿吃啥！</p>
     <p class="en">📜Later on, XMUMers can browse everything about eating at XMUM! (Still under development...)</p>
     <p class="zh">未来，XMUMers可以在这里找到关于XMUM干饭的一切！（刚新建文件夹）</p>
     <var-divider/>
-    <p style="font-family: 'Lexend', cursive;">
+    <p style="font-family: 'Lexend', cursive; margin-top: 3px;">
       <span style="font-size: 16px; color: grey;">DevTeam:</span>
       <span style="font-size: 20px; font-weight: bold;"> Dr. Malo</span>
       <span style="font-size: 26px;">🐵</span>
     </p>
+    
   </div>
 
 
@@ -131,14 +132,12 @@ function textChangeAnimation(): void {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=ZCOOL+XiaoWei&display=swap');
 #container {
   position: absolute;
   margin: auto;
   width: 100vw;
   height: 80px;
-  top: 25vh;
+  top: 23vh;
   filter: url(#threshold) blur(0.5px);
 }
 
@@ -158,7 +157,7 @@ function textChangeAnimation(): void {
 .mainLogo {
   display: flex;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 8vh;
 }
 
 .iconfont {
@@ -180,7 +179,7 @@ function textChangeAnimation(): void {
   0% { color: rgb(39, 39, 39); }
   25% { color: rgb(50, 117, 76); }
   50% { color: rgb(24, 103, 150); }
-  75% { color: rgb(161, 104, 153); }
+  75% { color: rgb(124, 104, 161); }
   100% { color: rgb(48, 46, 38); }
 }
 
@@ -188,9 +187,6 @@ function textChangeAnimation(): void {
   margin-top: 15px;
   margin-bottom: 0px;
   font-family: "Lexend", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .zh {
